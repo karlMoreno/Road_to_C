@@ -1,0 +1,295 @@
+AARCH64 GAS  /tmp/cckCR1hU.s 			page 1
+
+
+   1              		.arch armv8-a
+   2              		.file	"Hello.c"
+   3              		.text
+   4              	.Ltext0:
+   5              		.file 0 "/home/karl/Projects/Road_to_C/Hello" "Hello.c"
+   6              		.section	.rodata
+   7              		.align	3
+   8              	.LC0:
+   9 0000 48656C6C 		.string	"Hello, World! "
+   9      6F2C2057 
+   9      6F726C64 
+   9      212000
+  10              		.text
+  11              		.align	2
+  12              		.global	main
+  13              		.type	main, %function
+  14              	main:
+  15              	.LFB0:
+  16              		.file 1 "Hello.c"
+   1:Hello.c       **** #include <stdio.h>
+   2:Hello.c       **** 
+   3:Hello.c       **** int main() {
+  17              		.loc 1 3 12
+  18              		.cfi_startproc
+  19 0000 FD7BBFA9 		stp	x29, x30, [sp, -16]!
+  20              		.cfi_def_cfa_offset 16
+  21              		.cfi_offset 29, -16
+  22              		.cfi_offset 30, -8
+  23 0004 FD030091 		mov	x29, sp
+   4:Hello.c       **** 	printf( "Hello, World! \n" );
+  24              		.loc 1 4 2
+  25 0008 00000090 		adrp	x0, .LC0
+  26 000c 00000091 		add	x0, x0, :lo12:.LC0
+  27 0010 00000094 		bl	puts
+   5:Hello.c       **** 	return 0;
+  28              		.loc 1 5 9
+  29 0014 00008052 		mov	w0, 0
+   6:Hello.c       **** }
+  30              		.loc 1 6 1
+  31 0018 FD7BC1A8 		ldp	x29, x30, [sp], 16
+  32              		.cfi_restore 30
+  33              		.cfi_restore 29
+  34              		.cfi_def_cfa_offset 0
+  35 001c C0035FD6 		ret
+  36              		.cfi_endproc
+  37              	.LFE0:
+  38              		.size	main, .-main
+  39              	.Letext0:
+  40              		.section	.debug_info,"",@progbits
+  41              	.Ldebug_info0:
+  42 0000 88000000 		.4byte	0x88
+  43 0004 0500     		.2byte	0x5
+  44 0006 01       		.byte	0x1
+  45 0007 08       		.byte	0x8
+  46 0008 00000000 		.4byte	.Ldebug_abbrev0
+  47 000c 02       		.uleb128 0x2
+  48 000d 00000000 		.4byte	.LASF10
+AARCH64 GAS  /tmp/cckCR1hU.s 			page 2
+
+
+  49 0011 1D       		.byte	0x1d
+  50 0012 00000000 		.4byte	.LASF0
+  51 0016 00000000 		.4byte	.LASF1
+  52 001a 00000000 		.8byte	.Ltext0
+  52      00000000 
+  53 0022 20000000 		.8byte	.Letext0-.Ltext0
+  53      00000000 
+  54 002a 00000000 		.4byte	.Ldebug_line0
+  55 002e 01       		.uleb128 0x1
+  56 002f 08       		.byte	0x8
+  57 0030 07       		.byte	0x7
+  58 0031 00000000 		.4byte	.LASF2
+  59 0035 03       		.uleb128 0x3
+  60 0036 04       		.byte	0x4
+  61 0037 05       		.byte	0x5
+  62 0038 696E7400 		.string	"int"
+  63 003c 01       		.uleb128 0x1
+  64 003d 01       		.byte	0x1
+  65 003e 08       		.byte	0x8
+  66 003f 00000000 		.4byte	.LASF3
+  67 0043 01       		.uleb128 0x1
+  68 0044 02       		.byte	0x2
+  69 0045 07       		.byte	0x7
+  70 0046 00000000 		.4byte	.LASF4
+  71 004a 01       		.uleb128 0x1
+  72 004b 04       		.byte	0x4
+  73 004c 07       		.byte	0x7
+  74 004d 00000000 		.4byte	.LASF5
+  75 0051 01       		.uleb128 0x1
+  76 0052 01       		.byte	0x1
+  77 0053 06       		.byte	0x6
+  78 0054 00000000 		.4byte	.LASF6
+  79 0058 01       		.uleb128 0x1
+  80 0059 02       		.byte	0x2
+  81 005a 05       		.byte	0x5
+  82 005b 00000000 		.4byte	.LASF7
+  83 005f 01       		.uleb128 0x1
+  84 0060 08       		.byte	0x8
+  85 0061 05       		.byte	0x5
+  86 0062 00000000 		.4byte	.LASF8
+  87 0066 01       		.uleb128 0x1
+  88 0067 01       		.byte	0x1
+  89 0068 08       		.byte	0x8
+  90 0069 00000000 		.4byte	.LASF9
+  91 006d 04       		.uleb128 0x4
+  92 006e 00000000 		.4byte	.LASF11
+  93 0072 01       		.byte	0x1
+  94 0073 03       		.byte	0x3
+  95 0074 05       		.byte	0x5
+  96 0075 35000000 		.4byte	0x35
+  97 0079 00000000 		.8byte	.LFB0
+  97      00000000 
+  98 0081 20000000 		.8byte	.LFE0-.LFB0
+  98      00000000 
+  99 0089 01       		.uleb128 0x1
+ 100 008a 9C       		.byte	0x9c
+ 101 008b 00       		.byte	0
+AARCH64 GAS  /tmp/cckCR1hU.s 			page 3
+
+
+ 102              		.section	.debug_abbrev,"",@progbits
+ 103              	.Ldebug_abbrev0:
+ 104 0000 01       		.uleb128 0x1
+ 105 0001 24       		.uleb128 0x24
+ 106 0002 00       		.byte	0
+ 107 0003 0B       		.uleb128 0xb
+ 108 0004 0B       		.uleb128 0xb
+ 109 0005 3E       		.uleb128 0x3e
+ 110 0006 0B       		.uleb128 0xb
+ 111 0007 03       		.uleb128 0x3
+ 112 0008 0E       		.uleb128 0xe
+ 113 0009 00       		.byte	0
+ 114 000a 00       		.byte	0
+ 115 000b 02       		.uleb128 0x2
+ 116 000c 11       		.uleb128 0x11
+ 117 000d 01       		.byte	0x1
+ 118 000e 25       		.uleb128 0x25
+ 119 000f 0E       		.uleb128 0xe
+ 120 0010 13       		.uleb128 0x13
+ 121 0011 0B       		.uleb128 0xb
+ 122 0012 03       		.uleb128 0x3
+ 123 0013 1F       		.uleb128 0x1f
+ 124 0014 1B       		.uleb128 0x1b
+ 125 0015 1F       		.uleb128 0x1f
+ 126 0016 11       		.uleb128 0x11
+ 127 0017 01       		.uleb128 0x1
+ 128 0018 12       		.uleb128 0x12
+ 129 0019 07       		.uleb128 0x7
+ 130 001a 10       		.uleb128 0x10
+ 131 001b 17       		.uleb128 0x17
+ 132 001c 00       		.byte	0
+ 133 001d 00       		.byte	0
+ 134 001e 03       		.uleb128 0x3
+ 135 001f 24       		.uleb128 0x24
+ 136 0020 00       		.byte	0
+ 137 0021 0B       		.uleb128 0xb
+ 138 0022 0B       		.uleb128 0xb
+ 139 0023 3E       		.uleb128 0x3e
+ 140 0024 0B       		.uleb128 0xb
+ 141 0025 03       		.uleb128 0x3
+ 142 0026 08       		.uleb128 0x8
+ 143 0027 00       		.byte	0
+ 144 0028 00       		.byte	0
+ 145 0029 04       		.uleb128 0x4
+ 146 002a 2E       		.uleb128 0x2e
+ 147 002b 00       		.byte	0
+ 148 002c 3F       		.uleb128 0x3f
+ 149 002d 19       		.uleb128 0x19
+ 150 002e 03       		.uleb128 0x3
+ 151 002f 0E       		.uleb128 0xe
+ 152 0030 3A       		.uleb128 0x3a
+ 153 0031 0B       		.uleb128 0xb
+ 154 0032 3B       		.uleb128 0x3b
+ 155 0033 0B       		.uleb128 0xb
+ 156 0034 39       		.uleb128 0x39
+ 157 0035 0B       		.uleb128 0xb
+ 158 0036 49       		.uleb128 0x49
+AARCH64 GAS  /tmp/cckCR1hU.s 			page 4
+
+
+ 159 0037 13       		.uleb128 0x13
+ 160 0038 11       		.uleb128 0x11
+ 161 0039 01       		.uleb128 0x1
+ 162 003a 12       		.uleb128 0x12
+ 163 003b 07       		.uleb128 0x7
+ 164 003c 40       		.uleb128 0x40
+ 165 003d 18       		.uleb128 0x18
+ 166 003e 7C       		.uleb128 0x7c
+ 167 003f 19       		.uleb128 0x19
+ 168 0040 00       		.byte	0
+ 169 0041 00       		.byte	0
+ 170 0042 00       		.byte	0
+ 171              		.section	.debug_aranges,"",@progbits
+ 172 0000 2C000000 		.4byte	0x2c
+ 173 0004 0200     		.2byte	0x2
+ 174 0006 00000000 		.4byte	.Ldebug_info0
+ 175 000a 08       		.byte	0x8
+ 176 000b 00       		.byte	0
+ 177 000c 0000     		.2byte	0
+ 178 000e 0000     		.2byte	0
+ 179 0010 00000000 		.8byte	.Ltext0
+ 179      00000000 
+ 180 0018 20000000 		.8byte	.Letext0-.Ltext0
+ 180      00000000 
+ 181 0020 00000000 		.8byte	0
+ 181      00000000 
+ 182 0028 00000000 		.8byte	0
+ 182      00000000 
+ 183              		.section	.debug_line,"",@progbits
+ 184              	.Ldebug_line0:
+ 185 0000 4E000000 		.section	.debug_str,"MS",@progbits,1
+ 185      05000800 
+ 185      2A000000 
+ 185      040101FB 
+ 185      0E0D0001 
+ 186              	.LASF5:
+ 187 0000 756E7369 		.string	"unsigned int"
+ 187      676E6564 
+ 187      20696E74 
+ 187      00
+ 188              	.LASF2:
+ 189 000d 6C6F6E67 		.string	"long unsigned int"
+ 189      20756E73 
+ 189      69676E65 
+ 189      6420696E 
+ 189      7400
+ 190              	.LASF6:
+ 191 001f 7369676E 		.string	"signed char"
+ 191      65642063 
+ 191      68617200 
+ 192              	.LASF4:
+ 193 002b 73686F72 		.string	"short unsigned int"
+ 193      7420756E 
+ 193      7369676E 
+ 193      65642069 
+ 193      6E7400
+ 194              	.LASF7:
+AARCH64 GAS  /tmp/cckCR1hU.s 			page 5
+
+
+ 195 003e 73686F72 		.string	"short int"
+ 195      7420696E 
+ 195      7400
+ 196              	.LASF3:
+ 197 0048 756E7369 		.string	"unsigned char"
+ 197      676E6564 
+ 197      20636861 
+ 197      7200
+ 198              	.LASF8:
+ 199 0056 6C6F6E67 		.string	"long int"
+ 199      20696E74 
+ 199      00
+ 200              	.LASF11:
+ 201 005f 6D61696E 		.string	"main"
+ 201      00
+ 202              	.LASF10:
+ 203 0064 474E5520 		.string	"GNU C17 11.3.0 -mlittle-endian -mabi=lp64 -g -fasynchronous-unwind-tables -fstack-protect
+ 203      43313720 
+ 203      31312E33 
+ 203      2E30202D 
+ 203      6D6C6974 
+ 204              	.LASF9:
+ 205 00e0 63686172 		.string	"char"
+ 205      00
+ 206              		.section	.debug_line_str,"MS",@progbits,1
+ 207              	.LASF0:
+ 208 0000 48656C6C 		.string	"Hello.c"
+ 208      6F2E6300 
+ 209              	.LASF1:
+ 210 0008 2F686F6D 		.string	"/home/karl/Projects/Road_to_C/Hello"
+ 210      652F6B61 
+ 210      726C2F50 
+ 210      726F6A65 
+ 210      6374732F 
+ 211              		.ident	"GCC: (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0"
+ 212 002c 2F686F6D 		.section	.note.GNU-stack,"",@progbits
+ 212      652F6B61 
+ 212      726C2F50 
+ 212      726F6A65 
+ 212      6374732F 
+AARCH64 GAS  /tmp/cckCR1hU.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Hello.c
+     /tmp/cckCR1hU.s:7      .rodata:0000000000000000 $d
+     /tmp/cckCR1hU.s:11     .text:0000000000000000 $x
+     /tmp/cckCR1hU.s:14     .text:0000000000000000 main
+                        .eh_frame:0000000000000014 $d
+
+UNDEFINED SYMBOLS
+puts
