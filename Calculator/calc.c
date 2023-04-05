@@ -2,15 +2,46 @@
 #include <stdint.h>
 
 int main() {
-	uint8_t smallNumber;
-	uint8_t result;
+	char input[100];
+	int num1, num2, result;
+	char operator;
 
-	smallNumber = 255;
-	result = smallNumber + 1;
+	printf("Enter an expression (e.g 1 + 2 ): \n");
+	fgets(input,100,stdin);
 
-	printf("255+1 is %d\n", result);
+	sscanf(input, "%d %c %d", &num1, &operator, &num2);
 
-	return (0);
+	switch (operator)
+	{
+	case '+':
+		result = num1 + num2;
+		break;
+	case '-':
+		result = num1 - num2;
+		break;
+	case '*':
+		result = num1 * num2;
+		break;
+	case '/':
+		if(num2 != 0){
+			result = num1 / num2;
+		} else printf("Error you are dividing by 0 dipshit");
+		break;
+	case '%':
+		result = num1 % num2;
+		break;
+	
+	default:
+		break;
+
+	}
+
+	printf("The result is %d\n", result);
+
+
+
+
+
 }
 
 
