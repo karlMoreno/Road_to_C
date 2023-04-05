@@ -2,10 +2,9 @@
 #include <stdint.h>
 
 int main() {
-	uint8_t smallNumber = 0x12; 
+	uint8_t smallNum = 255;
 
-	printf("0x12 is %u decimal\n", smallNumber);
-	printf("0x12 is %o octal\n", smallNumber);
-	printf("0x12 is %x hex\n", smallNumber);
+	printf("255+1 is %u\n", smallNum+1);
 
+	return (0);
 }
