@@ -18,7 +18,7 @@ int main() {
     smallPtr = &smallThing;
 
     printf("smallPtr %p\n", smallPtr);
-    printf("sizeof(smallPtr) %lu", sizeof(smallPtr));
+    printf("sizeof(smallPtr) %lu\n", sizeof(smallPtr));
     printf("*smallPtr %d\n", *smallPtr);
 
     // smallPtr points to smallThing2 
