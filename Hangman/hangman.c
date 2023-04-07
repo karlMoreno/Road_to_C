@@ -1,35 +1,28 @@
 #include <stdio.h>
-#include <stdint.h>
 
 int main() {
-    uint8_t smallThing = 5;
-    uint8_t smallThing2 = 4;
-    uint64_t largeThing = 9235824213;
+    int array[] = {1,2,3,4,-1}; // array
+    int* arrayPtr = array; // pointer to array
 
-    uint8_t* smallPtr;
-    uint64_t* largePtr;
+    //print array using array
+    for (int index = 0; array[index] >= 0; index++) {
+        printf("Address %p Value %d\n", &array[index], array[index]);
+    }
+    
+    printf("---------------------\n");
 
-    printf("smallThing %d\n", smallThing);
-    printf("sizeof(smallThing) %lu\n", sizeof(smallThing));
-    printf("largeThing %ld\n", largeThing);
-    printf("sizeof(largeThing) %lu\n", sizeof(largeThing));
+    //Print array using pointer
+    for (int index = 0; *(arrayPtr + index) >= 0; index++) {
+        printf("Address %p Value %d\n", arrayPtr + index, *(arrayPtr + index));
+    }
 
-    //smallPtr points to a small thing
-    smallPtr = &smallThing;
+    printf("---------------------\n");
 
-    printf("smallPtr %p\n", smallPtr);
-    printf("sizeof(smallPtr) %lu\n", sizeof(smallPtr));
-    printf("*smallPtr %d\n", *smallPtr);
+    //Print array using incrementing pointer
+    for (int* current = array; *current >= 0; current++) {
+        printf("Address %p Value %d\n", current, *current);
+    }
 
-    // smallPtr points to smallThing2 
-    smallPtr = &smallThing2;
-    printf("smallPtr %d\n", *smallPtr);
-
-    largePtr = &largeThing;
-    printf("largePtr %p\n", largePtr);
-    printf("sizeof(largePtr) %lu\n", sizeof(largePtr));
-    printf("*largePtr %ld\n", *largePtr);
 
     return (0);
 }
-
