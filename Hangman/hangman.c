@@ -1,28 +1,28 @@
 #include <stdio.h>
 
-int main() {
-    int array[] = {1,2,3,4,-1}; // array
-    int* arrayPtr = array; // pointer to array
+int main()
+{
+    int numbers1[5] = {11, 12, 13, 14, 15}; // some numbers
+    int numbers2[5] = {21, 22, 23, 24, 25}; // variables to be overwritten
 
-    //print array using array
-    for (int index = 0; array[index] >= 0; index++) {
-        printf("Address %p Value %d\n", &array[index], array[index]);
-    }
-    
-    printf("---------------------\n");
+    printf("numbers2[0] %d\n", numbers2[0]);
 
-    //Print array using pointer
-    for (int index = 0; *(arrayPtr + index) >= 0; index++) {
-        printf("Address %p Value %d\n", arrayPtr + index, *(arrayPtr + index));
-    }
+    numbers1[6] = 99; //illegal
 
-    printf("---------------------\n");
+    // illegal -- loops past end
 
-    //Print array using incrementing pointer
-    for (int* current = array; *current >= 0; current++) {
-        printf("Address %p Value %d\n", current, *current);
+    for(int i = 0; i < 9; i++) {
+        printf("numbers1[%d] %p\n", i, &numbers1[i]);
     }
 
+    printf("numbers2[%d] %p\n", 0, &numbers2[0]);
+    printf("numbers2[0] %d\n", numbers2[0]);
+
+    printf("numbers1[8] is %d\n", numbers1[8]);
+
+    printf("-----------------test----------\n");
+    printf("numbers1[%d] %p\n", 8, &numbers1[8]);
+    printf("numbers2[%d] %p\n", 0, &numbers2[0]);
 
     return (0);
 }
