@@ -1,33 +1,20 @@
 #include <stdio.h>
 
-char theData[5] = "1234"; // some data to play with
-
-char* allChange; // Pointer and value can change 
-
-const char* dataConst = "abc"; // char const, pointer not
-
-char* const ptrConst = theData; // char var, pointer not
-
-const char* const allConst = "abc"; // nobody change nothing
-
 int main() {
-    char otherData[5] = "abcd"; // some other data
+    char a = 'a';
+    printf("Here is the value of a: %c\n", a);
 
-    allChange = otherData; // change pointer
-    *allChange = 'x'; //change data
+    char *const constant_ptr = &a;
+    printf("Here is the constant pointer of a: %p\n", constant_ptr);
 
-    dataConst = otherData; //change pointer
-    // *dataConst = 'x'; // illegal to change data
+    char const *pointer_to_constant = &a;
+    printf("Here is the pointer to the constant of a: %p\n", pointer_to_constant);
 
-    //ptrConst = otherData //illegal to change data
-    *ptrConst = 'x'; // change data 
-
-    //all const = otherData; //Illegal to change pointer
-    // *allConst = 'x';  //Illegal to change data
-
-
+    printf("\nIn a constant pointer you can change the value of the constant pointer variable\n");
+    printf("which points to the original variable but not its pointer\n");
     
+    *constant_ptr = 'z';
+    printf("\nNow the value of a: %c\n", a);
 
     return (0);
 }
-
