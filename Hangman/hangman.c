@@ -116,16 +116,20 @@ void printLevel7 (void) {
 
 void blankStr(char* str) {
     int len = strlen(str);
-    char *const space = ' ';
+    char space = ' ';
     for(int i = 0; i < len; i++){
         if(str[i] == space){
-            printf(" ");
+            printf("%c",space);
         }else{
             printf("_");
         }
     }
+    printf("\n");
 }
 
+void printLevel(char[],char[]){
+    
+}
 
 int main() {
     //welcome to game
@@ -137,7 +141,7 @@ int main() {
     // print insert word // maybe make it not be able to be seen???
     char input[50];
     printf("Enter the word you want someone to guess: ");
-    scanf("%s",input);
+    scanf("%[^\n]",input); //for spaces
     printf("\n"); //newline
     blankStr(input);
 
