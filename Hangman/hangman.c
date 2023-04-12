@@ -72,6 +72,8 @@ char level2[7][9] = {
         "========="
     };
 
+    int asciiRow = 7;
+
 void printLevel1 (void) {
     for(int i = 0; i < 7; i++){
         printf("\n%s",level1[i]);
@@ -127,8 +129,11 @@ void blankStr(char* str) {
     printf("\n");
 }
 
-void printLevel(char[],char[]){
-
+void printLevel(int counter,char position[][]){
+    //char level[][] = position;
+    for(int i = 0; i < asciiRow; i++){
+        
+    }
 }
 
 int main() {
@@ -151,7 +156,9 @@ int main() {
     // need to restructure code and organize the game in code and parts
     //list out all parts in comment next time
 
-
+    int levelCounter = 0;
+    // do by reference instead
+    //int levels[] = {level1,level2,level3,level4,level5,level6, level7};
 
 
     //parse inserted word into _ and spaces
