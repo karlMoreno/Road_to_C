@@ -1,35 +1,157 @@
 #include <stdio.h>
+#include <string.h>
+
+
+char level1[7][9] = {
+        "  +---+",
+        "  |   |",
+        "      |",
+        "      |",
+        "      |",
+        "      |",
+        "========="
+    };
+
+char level2[7][9] = {
+        "  +---+",
+        "  |   |",
+        "  O   |",
+        "      |",
+        "      |",
+        "      |",
+        "========="
+    };
+
+    char level3[7][9] = {
+        "  +---+",
+        "  |   |",
+        "  O   |",
+        "  |   |",
+        "      |",
+        "      |",
+        "========="
+    };
+
+    char level4[7][9] = {
+        "  +---+",
+        "  |   |",
+        "  O   |",
+        " [|   |",
+        "      |",
+        "      |",
+        "========="
+    };
+
+    char level5[7][9] = {
+        "  +---+",
+        "  |   |",
+        "  O   |",
+        " [|]  |",
+        "      |",
+        "      |",
+        "========="
+    };
+
+    char level6[7][9] = {
+        "  +---+",
+        "  |   |",
+        "  O   |",
+        " [|]  |",
+        " |    |",
+        "      |",
+        "========="
+    };
+
+    char level7[7][9] = {
+        "  +---+",
+        "  |   |",
+        "  O   |",
+        " [|]  |",
+        " | |  |",
+        "      |",
+        "========="
+    };
+
+void printLevel1 (void) {
+    for(int i = 0; i < 7; i++){
+        printf("\n%s",level1[i]);
+    }
+} 
+
+void printLevel2 (void) {
+    for(int i = 0; i < 7; i++){
+        printf("\n%s",level2[i]);
+    }
+} 
+
+void printLevel3 (void) {
+    for(int i = 0; i < 7; i++){
+        printf("\n%s",level3[i]);
+    }
+} 
+
+void printLevel4 (void) {
+    for(int i = 0; i < 7; i++){
+        printf("\n%s",level4[i]);
+    }
+} 
+
+void printLevel5 (void) {
+    for(int i = 0; i < 7; i++){
+        printf("\n%s",level5[i]);
+    }
+} 
+
+void printLevel6 (void) {
+    for(int i = 0; i < 7; i++){
+        printf("\n%s",level6[i]);
+    }
+} 
+
+void printLevel7 (void) {
+    for(int i = 0; i < 7; i++){
+        printf("\n%s",level7[i]);
+    }
+}
+
+void blankStr(char* str) {
+    int len = strlen(str);
+    char *const space = ' ';
+    for(int i = 0; i < len; i++){
+        if(str[i] == space){
+            printf(" ");
+        }else{
+            printf("_");
+        }
+    }
+}
+
 
 int main() {
-    char a = 'a';
-    char b = 'b';
-    printf("Here is the value of a: %c\n", a);
+    //welcome to game
+    printf("Welcome to Hangman!!!\n");
+    // print gallows
+    printLevel1();
+    printf("\n"); //newline
 
-    char *const constant_ptr = &a;
-    printf("Here is the constant pointer of a: %p\n", constant_ptr);
+    // print insert word // maybe make it not be able to be seen???
+    char input[50];
+    printf("Enter the word you want someone to guess: ");
+    scanf("%s",input);
+    printf("\n"); //newline
+    blankStr(input);
 
-    char const *pointer_to_constant = &a;
-    printf("Here is the pointer to the constant of a: %p\n", pointer_to_constant);
 
-    printf("\nIn a constant pointer you can change the value of the constant pointer variable\n");
-    printf("which points to the original variable but not its pointer\n");
-    
-    *constant_ptr = 'z';
-    printf("\nNow the value of a: %c\n", a);
 
-    printf("-------------------------------\n");
-    printf("Now lets handle pointers to constants\n");
-    printf("\nHere is our pointer to the character a again: %p\n", pointer_to_constant);
-    printf("Here is its value: %c\n", *pointer_to_constant);
 
-    pointer_to_constant = &b;
-    //*pointer_to_constant = 'c';           //this is illegal
-    printf("\nNow we will change its pointer or memory address to that of the variable b: %p\n", pointer_to_constant);
-    printf("Here is its changed value now when we call *pointer_to_constant: %c\n", *pointer_to_constant);
+    //parse inserted word into _ and spaces
 
-    printf("\nWe can change the pointer but we cannot outright change its value directly\n");
-    printf("Trying to do *pointer_to_constant = 'x' will give you an error\n");
-    printf("But like we did before we can change the value by changing it to the address of a different variable that has a different value");
+    //array of gallows to be printed if word is wrong
+    // _ _ _ _ _ _ _ _ show how many tries you have left
+
+    // also print x for every wrong try
+
+
 
     return (0);
 }
