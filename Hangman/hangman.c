@@ -128,7 +128,7 @@ void blankStr(char* str) {
 }
 
 void printLevel(char[],char[]){
-    
+
 }
 
 int main() {
@@ -144,6 +144,12 @@ int main() {
     scanf("%[^\n]",input); //for spaces
     printf("\n"); //newline
     blankStr(input);
+
+
+    //I need to print the level and word with tries every time 
+    // i think i will put the levels in an array and loop through depending on the level
+    // need to restructure code and organize the game in code and parts
+    //list out all parts in comment next time
 
 
 
