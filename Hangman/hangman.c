@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
-
-char level1[7][9] = {
+int levelsArrayLevels = 7;
+int levelRows = 7;
+int levelColumns = 9;
+char levelsArray[7][7][9] = {
+    {
         "  +---+",
         "  |   |",
         "      |",
@@ -10,29 +13,26 @@ char level1[7][9] = {
         "      |",
         "      |",
         "========="
-    };
-
-char level2[7][9] = {
-        "  +---+",
-        "  |   |",
-        "  O   |",
-        "      |",
-        "      |",
-        "      |",
-        "========="
-    };
-
-    char level3[7][9] = {
+    },
+    {
         "  +---+",
         "  |   |",
         "  O   |",
+        "      |",
+        "      |",
+        "      |",
+        "========="
+    },
+    {
+        "  +---+",
+        "  |   |",
+        "  O   |",
         "  |   |",
         "      |",
         "      |",
         "========="
-    };
-
-    char level4[7][9] = {
+    },
+    {
         "  +---+",
         "  |   |",
         "  O   |",
@@ -40,9 +40,8 @@ char level2[7][9] = {
         "      |",
         "      |",
         "========="
-    };
-
-    char level5[7][9] = {
+    },
+    {
         "  +---+",
         "  |   |",
         "  O   |",
@@ -50,9 +49,8 @@ char level2[7][9] = {
         "      |",
         "      |",
         "========="
-    };
-
-    char level6[7][9] = {
+    },
+    {
         "  +---+",
         "  |   |",
         "  O   |",
@@ -60,9 +58,8 @@ char level2[7][9] = {
         " |    |",
         "      |",
         "========="
-    };
-
-    char level7[7][9] = {
+    },
+    {
         "  +---+",
         "  |   |",
         "  O   |",
@@ -70,52 +67,26 @@ char level2[7][9] = {
         " | |  |",
         "      |",
         "========="
-    };
-
-    int asciiRow = 7;
-
-void printLevel1 (void) {
-    for(int i = 0; i < 7; i++){
-        printf("\n%s",level1[i]);
     }
-} 
+};
 
-void printLevel2 (void) {
-    for(int i = 0; i < 7; i++){
-        printf("\n%s",level2[i]);
-    }
-} 
 
-void printLevel3 (void) {
-    for(int i = 0; i < 7; i++){
-        printf("\n%s",level3[i]);
-    }
-} 
-
-void printLevel4 (void) {
-    for(int i = 0; i < 7; i++){
-        printf("\n%s",level4[i]);
-    }
-} 
-
-void printLevel5 (void) {
-    for(int i = 0; i < 7; i++){
-        printf("\n%s",level5[i]);
-    }
-} 
-
-void printLevel6 (void) {
-    for(int i = 0; i < 7; i++){
-        printf("\n%s",level6[i]);
-    }
-} 
-
-void printLevel7 (void) {
-    for(int i = 0; i < 7; i++){
-        printf("\n%s",level7[i]);
+void printAllLevels(void) {
+    for(int i = 0; i < levelsArrayLevels; i++){
+        for (int j =0; j < levelRows; j++){
+            printf("%s\n",levelsArray[i][j]); //%s type for string? well for char really
+        }
+        // Add a newline character after all the rows of a level have been printed
+        printf("\n");
     }
 }
 
+// void testPrint(void) {
+//     printf("%s\n",levelsArray[0][7]);
+
+// }
+
+//For printing whole word despite spaces use %[^\n] in scanf
 void blankStr(char* str) {
     int len = strlen(str);
     char space = ' ';
@@ -129,46 +100,12 @@ void blankStr(char* str) {
     printf("\n");
 }
 
-void printLevel(int counter,char position[][]){
-    //char level[][] = position;
-    for(int i = 0; i < asciiRow; i++){
-        
-    }
-}
+
 
 int main() {
-    //welcome to game
-    printf("Welcome to Hangman!!!\n");
-    // print gallows
-    printLevel1();
-    printf("\n"); //newline
 
-    // print insert word // maybe make it not be able to be seen???
-    char input[50];
-    printf("Enter the word you want someone to guess: ");
-    scanf("%[^\n]",input); //for spaces
-    printf("\n"); //newline
-    blankStr(input);
-
-
-    //I need to print the level and word with tries every time 
-    // i think i will put the levels in an array and loop through depending on the level
-    // need to restructure code and organize the game in code and parts
-    //list out all parts in comment next time
-
-    int levelCounter = 0;
-    // do by reference instead
-    //int levels[] = {level1,level2,level3,level4,level5,level6, level7};
-
-
-    //parse inserted word into _ and spaces
-
-    //array of gallows to be printed if word is wrong
-    // _ _ _ _ _ _ _ _ show how many tries you have left
-
-    // also print x for every wrong try
-
-
+    printAllLevels();
+    //testPrint();
 
     return (0);
 }
