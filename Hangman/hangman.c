@@ -2,9 +2,9 @@
 #include <string.h>
 
 int levelsArrayLevels = 7;
-int levelRows = 7;
+int levelRows = 8;
 int levelColumns = 9;
-char levelsArray[7][7][9] = {
+char levelsArray[7][8][9] = { //figure out why i need that extra space
     {
         "  +---+",
         "  |   |",
@@ -12,7 +12,8 @@ char levelsArray[7][7][9] = {
         "      |",
         "      |",
         "      |",
-        "========="
+        "=========",
+        "\n"
     },
     {
         "  +---+",
@@ -39,7 +40,8 @@ char levelsArray[7][7][9] = {
         " [|   |",
         "      |",
         "      |",
-        "========="
+        "=========",
+        "\n"
     },
     {
         "  +---+",
@@ -48,7 +50,8 @@ char levelsArray[7][7][9] = {
         " [|]  |",
         "      |",
         "      |",
-        "========="
+        "=========",
+        "\n"
     },
     {
         "  +---+",
@@ -57,7 +60,8 @@ char levelsArray[7][7][9] = {
         " [|]  |",
         " |    |",
         "      |",
-        "========="
+        "=========",
+        "\n"
     },
     {
         "  +---+",
@@ -66,19 +70,22 @@ char levelsArray[7][7][9] = {
         " [|]  |",
         " | |  |",
         "      |",
-        "========="
+        "=========",
+        "\n"
     }
 };
 
 
 void printAllLevels(void) {
-    for(int i = 0; i < levelsArrayLevels; i++){
-        for (int j =0; j < levelRows; j++){
-            printf("%s\n",levelsArray[i][j]); //%s type for string? well for char really
+    for (int level = 0; level < levelsArrayLevels; level++){
+        for(int row = 0; row < levelRows; row++) {
+            // printf("the level: %d and row: %d\n", level,row);
+            printf("%s\n",levelsArray[level][row]);
+            // for(int column = 0; column < levelColumns; column++){
+            // }
         }
-        // Add a newline character after all the rows of a level have been printed
-        printf("\n");
     }
+    
 }
 
 // void testPrint(void) {
