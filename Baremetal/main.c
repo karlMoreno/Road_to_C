@@ -7,7 +7,6 @@ void inner(void)
     int k = 3;
 
     i = i + k;
-    printf("%d", i);
 }
 
 // outer level function
@@ -15,14 +14,12 @@ void outer(void)
 {
     int i = 6;
     int j = 2;
-    int i = i + j;
-    printf("%d", i);
+    i = j + i;
     inner();
 }
 
 int main()
 {
     outer();
-
     return (0);
 }
