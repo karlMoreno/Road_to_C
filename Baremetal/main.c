@@ -1,25 +1,18 @@
 #include <stdio.h>
 
-// function called from another function
-void inner(void)
+int factor (const int x)
 {
-    int i = 5;
-    int k = 3;
-
-    i = i + k;
+    if (x == 1)
+    {
+        return (1);
+    }
+    return(x * factor(x-1));
 }
 
-// outer level function
-void outer(void)
+int main ()
 {
-    int i = 6;
-    int j = 2;
-    i = j + i;
-    inner();
-}
-
-int main()
-{
-    outer();
-    return (0);
+int result = factor(5);
+printf("5! is %d\n", result);
+    
+return (0);
 }
