@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 int levelsArrayLevels = 7;
 int levelRows = 8;
@@ -88,10 +89,6 @@ void printAllLevels(void) {
     
 }
 
-// void testPrint(void) {
-//     printf("%s\n",levelsArray[0][7]);
-
-// }
 
 //For printing whole word despite spaces use %[^\n] in scanf
 void blankStr(char* str) {
@@ -107,11 +104,59 @@ void blankStr(char* str) {
     printf("\n");
 }
 
+char checkGuess (char word[], int lengthOfWord, char guess) {
+    for (int letterPlace = 0; letterPlace < lengthOfWord; letterPlace++){
+        if (word[letterPlace] == guess){
+            return guess;
+        } else{
+            printf("Try again");
+        }
+    }
+}
+
+char stringToArray (char userInput[], int lengthOfWord){
+
+}
+
 
 
 int main() {
+    const int MAX_LENGTH = 100;
+    char user_input[MAX_LENGTH];
+    char char_array[MAX_LENGTH];
+    int levelCounter = 0;
+    int wrongCounter = levelCounter;
+    bool endGame = false;
+    int lengthOfWord;
 
-    printAllLevels();
+    printf("Welcome to hangman");
+    // print level 0
+
+    // ask for user to enter a word
+
+    // turn word from string into char array
+
+    // begin game
+
+    // print level 0, blank word, number of tries
+
+    // ask for user to guess by entering a single word
+
+    // check guess with word and return if right or not
+
+    //if right then level stays the same, char appears in blank word, number of tries also stays the same
+
+    //if wrong level increases, number of tries decrease, blank word remains the same 
+    //perhaps I should put letter they have tried
+
+    //if the guess the whole word then end game is true
+
+    //if they get too many wrong tries then end game is true
+
+    //print Game Over in ascii
+
+
+    while(endGame == false){
     //testPrint();
 
     return (0);
